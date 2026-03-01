@@ -141,10 +141,12 @@ body {
   justify-content: center;
   align-items: center;
   overflow: visible;
+  min-height: 500px;
 }
 
 .hero-image img {
   width: 150%;
+  height: auto;
   object-fit: contain;
   object-position: center;
   margin-right: 64px;
