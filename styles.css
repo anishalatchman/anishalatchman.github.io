@@ -444,9 +444,14 @@ body.dark-mode .footer-switch img {
 }
 
 /* Tablet Styles */
-@media (max-width: 920px) {
+@media (max-width: 1117px) {
   .hero-text {
     padding: 80px 0px 0px 0px;
+  }
+
+  .hero-image {
+    min-height: auto;
+    align-items: flex-start;
   }
 }
 
