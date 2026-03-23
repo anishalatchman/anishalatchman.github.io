@@ -27,12 +27,22 @@ body.dark-mode {
 }
 
 body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    sans-serif;
   background-color: var(--primary-bg);
   color: var(--text-primary);
   line-height: 1.6;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .container {
@@ -238,7 +248,9 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
   cursor: pointer;
   min-height: 140px;
   height: 100%;
@@ -516,6 +528,15 @@ body.dark-mode .footer-switch img {
     flex-direction: column-reverse;
     gap: 24px;
     padding-bottom: 24px;
+  }
+
+  .hero-image {
+    min-height: auto;
+    align-items: flex-start;
+  }
+
+  .hero-image img {
+    margin-top: 0;
   }
 
   .section-title {
