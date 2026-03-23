@@ -151,11 +151,11 @@ body {
   justify-content: center;
   align-items: center;
   overflow: visible;
-  min-height: 500px;
+  min-height: 460px;
 }
 
 .hero-image img {
-  width: 150%;
+  width: 140%;
   height: auto;
   object-fit: contain;
   object-position: center;
@@ -164,7 +164,7 @@ body {
 
 /* Section Styles */
 .section {
-  padding: 70px 0 0 0;
+  padding: 56px 0 0 0;
   background-color: var(--secondary-bg);
 }
 
@@ -176,7 +176,7 @@ body {
   font-size: 42px;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 }
 
 .highlight-blue {
@@ -230,7 +230,8 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(2, 200px);
-  gap: 24px;
+  row-gap: 18px;
+  column-gap: 24px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -242,15 +243,21 @@ body {
 }
 
 .project-card {
-  border-radius: 20px;
+  --card-radius: 18px;
+  --card-border-width: 5px;
+  border-radius: var(--card-radius);
+  border: var(--card-border-width) solid
+    color-mix(
+      in srgb,
+      var(--card-accent-color, var(--gradient-blue)) 50%,
+      transparent
+    );
   overflow: hidden;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  transition:
-    transform 0.3s,
-    box-shadow 0.3s;
+  transition: box-shadow 0.3s;
   cursor: pointer;
   min-height: 140px;
   height: 100%;
@@ -259,7 +266,7 @@ body {
 
 .project-card.large {
   grid-row: span 2;
-  height: 424px; /* Sum of two rows (200px * 2) plus gap (24px) */
+  height: 418px; /* Sum of two rows (200px * 2) plus gap (18px) */
 }
 
 .project-card.medium {
@@ -272,7 +279,7 @@ body {
   grid-column: 2;
   grid-row: 2;
   display: flex;
-  gap: 24px;
+  gap: 18px;
   height: 200px;
 }
 
@@ -281,8 +288,13 @@ body {
 }
 
 .project-card:hover {
-  transform: translateY(-3px) scale(1.01);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-color: var(--card-accent-color, var(--gradient-blue));
+  box-shadow: 4px 4px 24px
+    color-mix(
+      in srgb,
+      var(--card-accent-color, var(--gradient-blue)) 50%,
+      transparent
+    );
   z-index: 2;
 }
 
@@ -291,44 +303,78 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: calc(var(--card-radius) - var(--card-border-width));
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.06);
 }
 
 .project-card .card-content {
   width: 100%;
-  height: 100%;
   position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
   flex-direction: column; /* Stack children vertically */
-  justify-content: flex-end; /* Align children to the bottom */
+  justify-content: flex-end;
   align-items: flex-start; /* Align children to the left */
-  padding: 24px;
+  padding: 16px 20px;
   background: linear-gradient(
     0deg,
     rgba(0, 0, 0, 0.55) 0%,
     rgba(0, 0, 0, 0) 100%
   );
   color: #fff;
-  border-radius: 0 0 20px 20px;
+  border-radius: calc(var(--card-radius) - var(--card-border-width));
 }
 
 .project-card .card-content h3 {
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 600;
+  line-height: 1.12;
+  margin: 0 0 4px 0;
   color: #fff;
 }
 
 .project-card .card-content p {
   font-size: 16px;
+  line-height: 1.22;
   color: #fff;
   margin: 0;
 }
 
+.project-card.overlay-blue {
+  --card-accent-color: var(--gradient-blue);
+}
+
+.project-card.overlay-purple {
+  --card-accent-color: var(--gradient-purple);
+}
+
+.project-card.overlay-yellow {
+  --card-accent-color: var(--gradient-yellow);
+}
+
+.project-card.overlay-orange {
+  --card-accent-color: var(--gradient-orange);
+}
+
 body.dark-mode .project-card {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
 }
 
 body.dark-mode .project-card:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 16px
+    color-mix(
+      in srgb,
+      var(--card-accent-color, var(--gradient-blue)) 60%,
+      transparent
+    );
 }
 
 /* About Section */
@@ -353,7 +399,7 @@ body.dark-mode .project-card:hover {
 
 .about-section {
   background-color: var(--secondary-bg);
-  padding-bottom: 60px;
+  padding-bottom: 44px;
 }
 
 .about-content {
