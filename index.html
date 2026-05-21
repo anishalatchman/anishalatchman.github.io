@@ -29,8 +29,16 @@
     <header class="header">
       <div class="container">
         <div class="nav-wrapper">
-          <h1 class="logo">Anisha Latchman</h1>
+          <a class="logo-link" href="./">
+            <img
+              class="logo-mark"
+              src="assets/webclip.png"
+              alt="Anisha Latchman logo"
+            />
+            <h1 class="logo">Anisha Latchman</h1>
+          </a>
           <nav class="nav">
+            <a href="#blog">Blog</a>
             <a href="#engineering">Engineering</a>
             <a href="#devrel">DevRel</a>
             <a href="#connect">Connect</a>
@@ -86,6 +94,40 @@
             />
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="section blog-section" id="blog">
+      <div class="container">
+        <div class="section-heading-row">
+          <div>
+            <h2 class="section-title">Latest writing</h2>
+          </div>
+          <a class="section-link" href="blog/">View all blogs</a>
+        </div>
+
+        <a class="blog-feature-card" href="blog/first-post.html">
+          <div class="blog-feature-copy">
+            <h3>Your First Blog Post</h3>
+            <p class="blog-summary">
+              A starter template for your first post. Replace the placeholder
+              copy with your own story, lesson, tutorial, or project recap.
+            </p>
+            <div class="blog-meta">
+              <span>Draft boilerplate</span>
+              <span>5 min read</span>
+              <span>May 2026</span>
+            </div>
+          </div>
+
+          <div class="blog-thumbnail blog-thumbnail-feature">
+            <img
+              src="assets/IndoCarribbeanBlog.jpg"
+              alt="Thumbnail for Your First Blog Post"
+            />
+          </div>
+        </a>
       </div>
     </section>
 
@@ -438,6 +480,11 @@
       const sunIconFooter =
         themeToggleFooter?.querySelector(".icon-sun-footer");
 
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+
       function updateThemeIcons() {
         const isDark = document.body.classList.contains("dark-mode");
         // Show moon in light mode, sun in dark mode
@@ -449,18 +496,22 @@
           sunIconFooter.style.display = isDark ? "inline" : "none";
       }
 
+      function setTheme(isDark) {
+        document.body.classList.toggle("dark-mode", isDark);
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+        updateThemeIcons();
+      }
+
       updateThemeIcons();
 
       if (themeToggle) {
         themeToggle.addEventListener("click", function () {
-          document.body.classList.toggle("dark-mode");
-          updateThemeIcons();
+          setTheme(!document.body.classList.contains("dark-mode"));
         });
       }
       if (themeToggleFooter) {
         themeToggleFooter.addEventListener("click", function () {
-          document.body.classList.toggle("dark-mode");
-          updateThemeIcons();
+          setTheme(!document.body.classList.contains("dark-mode"));
         });
       }
       document.addEventListener("DOMContentLoaded", updateThemeIcons);
