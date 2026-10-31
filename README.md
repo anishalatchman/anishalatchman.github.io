@@ -1,5 +1,4 @@
-Welcome to my portfolio of software engineering projects I've built and developer relations videos and blogs I've created. 
+Who am I? What do i care about? Take a scroll and let me know.
 
-Hope you enjoy, 
-
-Anisha
+Cheers,
+A
