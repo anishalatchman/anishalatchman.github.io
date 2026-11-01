@@ -91,13 +91,11 @@ body::before {
   position: absolute;
   top: 0;
   left: 0;
-  left: 50%;
-  width: min(1200px, calc(100% - 48px));
+  width: 100%;
   height: 100vh;
   z-index: 5;
   pointer-events: none;
   overflow: hidden;
-  transform: translateX(-50%);
 }
 
 .doodle {
@@ -438,7 +436,8 @@ body.drawing-mode .drawing-colors {
   cursor: pointer;
   min-height: 220px;
   height: auto;
-  background-color: var(--card-bg);
+  background: rgba(28, 72, 192, 0.6);
+  backdrop-filter: blur(8px);
 }
 
 .project-card.large {
