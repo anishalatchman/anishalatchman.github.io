@@ -8,56 +8,67 @@
       name="description"
       content="Anisha Latchman - Software Engineer & Technical Creator"
     />
-    <link rel="icon" type="image/png" href="/assets/favicon.png?" />
-    <link rel="apple-touch-icon" href="/assets/webclip.png" />
+    <link rel="icon" type="image/png" href="/assets/favicon_white.png" />
+    <link rel="apple-touch-icon" href="/assets/webclip_white.png" />
     <link
       rel="preload"
       as="image"
-      href="assets/AnishaHero.png"
+      href="assets/AnishaHeroNewWide.png"
       fetchpriority="high"
     />
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0,0"
+      rel="stylesheet"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
+    <canvas class="drawing-canvas" aria-hidden="true"></canvas>
     <!-- Header -->
     <header class="header">
       <div class="container">
         <div class="nav-wrapper">
-          <h1 class="logo">Anisha Latchman</h1>
+          <a class="logo-link" href="./">
+            <img
+              class="logo-mark"
+              src="assets/webclip_white.png"
+              alt="Anisha Latchman logo"
+            />
+            <h1 class="logo">Anisha Latchman</h1>
+          </a>
           <nav class="nav">
-            <a href="#engineering">Engineering</a>
-            <a href="#devrel">DevRel</a>
-            <a href="#connect">Connect</a>
-            <button class="theme-toggle" aria-label="Toggle theme">
-              <img
-                src="assets/Moon Icon.svg"
-                alt="Toggle dark mode"
-                class="icon-moon"
-                style="
-                  height: 20px;
-                  width: 20px;
-                  vertical-align: middle;
-                  display: none;
-                "
-              />
-              <img
-                src="assets/Sun Icon.svg"
-                alt="Toggle light mode"
-                class="icon-sun"
-                style="
-                  height: 20px;
-                  width: 20px;
-                  vertical-align: middle;
-                  display: none;
-                "
-              />
+            <button class="theme-toggle" aria-label="Enter drawing mode">
+              <span class="material-symbols-rounded icon-pencil" aria-hidden="true">edit</span>
+              <span class="material-symbols-rounded icon-eraser" aria-hidden="true">ink_eraser</span>
             </button>
+            <div class="drawing-colors" aria-label="Drawing colors">
+              <button
+                class="color-swatch color-swatch-purple is-selected"
+                data-color="--pen-purple"
+                aria-label="Use purple ink"
+              ></button>
+              <button
+                class="color-swatch color-swatch-orange"
+                data-color="--pen-orange"
+                aria-label="Use orange ink"
+              ></button>
+              <button
+                class="color-swatch color-swatch-yellow"
+                data-color="--pen-yellow"
+                aria-label="Use yellow ink"
+              ></button>
+              <button
+                class="color-swatch color-swatch-blue"
+                data-color="--pen-blue"
+                aria-label="Use blue ink"
+              ></button>
+            </div>
           </nav>
         </div>
       </div>
@@ -70,15 +81,15 @@
           <div class="hero-text">
             <h2>
               Anisha for<br />
-              <span class="word-cycle"></span>
+              <span class="hero-developer-text">Developers</span>
             </h2>
             <p class="hero-subtitle">
-              Bridging code and community through creative storytelling.
+              Code, community, and creative storytelling.
             </p>
           </div>
           <div class="hero-image">
             <img
-              src="assets/AnishaHero.webp"
+              src="assets/AnishaHeroNewWide.png"
               alt="Anisha Latchman Hero"
               width="800"
               height="800"
@@ -89,87 +100,11 @@
       </div>
     </section>
 
-    <!-- Software Engineering Section -->
-    <section class="section engineering-section" id="engineering">
-      <div class="container">
-        <h2 class="section-title">
-          Software <span class="highlight-blue">Engineering</span>
-        </h2>
-        <div class="projects-flex">
-          <!-- Large card on the left -->
-          <a
-            href="https://www.microsoft.com/en-us/security/blog/2025/07/22/microsoft-sentinel-data-lake-unify-signals-cut-costs-and-power-agentic-ai/"
-            target="_blank"
-          >
-            <div class="project-card large overlay-blue">
-              <img
-                src="assets/Microsoft.png"
-                alt="Microsoft Cloud Ecosystem Security"
-              />
-              <div class="card-content">
-                <h3>Microsoft</h3>
-                <p>Cloud Ecosystem Security</p>
-              </div>
-            </div>
-          </a>
-          <!-- Medium card on the right -->
-          <a
-            href="https://www.wealthsimple.com/en-ca/referrals"
-            target="_blank"
-          >
-            <div class="project-card medium overlay-orange">
-              <img
-                src="assets/Wealthsimple.png"
-                alt="Wealthsimple Growth Engagement"
-              />
-              <div class="card-content">
-                <h3>Wealthsimple</h3>
-                <p>Growth Engagement</p>
-              </div>
-            </div>
-          </a>
-          <!-- Small cards beneath medium card -->
-          <div class="project-small-row">
-            <a
-              href="https://www.freshbooks.com/payroll-software"
-              target="_blank"
-            >
-              <div class="project-card small overlay-yellow">
-                <img
-                  src="assets/FreshBooks.png"
-                  alt="FreshBooks Core Accounting"
-                />
-                <div class="card-content">
-                  <h3>FreshBooks</h3>
-                  <p>Core Accounting</p>
-                </div>
-              </div>
-            </a>
-            <a href="https://www.portlmedia.com/" target="_blank">
-              <div class="project-card small overlay-purple">
-                <img
-                  src="assets/Portl Media.png"
-                  alt="Portl Media Web Engineering"
-                />
-                <div class="card-content">
-                  <h3>Portl Media</h3>
-                  <p>Web Engineering</p>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Developer Relations Section -->
     <section class="section devrel-section" id="devrel">
       <div class="container">
-        <h2 class="section-title">
-          Developer <span class="highlight-yellow">Relations</span>
-        </h2>
         <!-- First Set (Flipped Layout) -->
-        <div class="projects-flex" style="margin-bottom: 24px">
+        <div class="projects-flex">
           <!-- Medium card on the left -->
           <a
             href="https://techcommunity.microsoft.com/blog/microsoft-security-blog/graph-rag-for-security-insights-from-a-microsoft-intern/4437624"
@@ -205,7 +140,7 @@
               href="https://www.linkedin.com/feed/update/urn:li:activity:7377016147201765376/"
               target="_blank"
             >
-              <div class="project-card small overlay-blue">
+              <div class="project-card medium overlay-blue">
                 <img
                   src="assets/Accelerate AI with Google.png"
                   alt="Accelerate AI with Google"
@@ -220,7 +155,7 @@
               href="https://www.linkedin.com/feed/update/urn:li:activity:7311598719462719488/"
               target="_blank"
             >
-              <div class="project-card small overlay-purple">
+              <div class="project-card medium overlay-purple">
                 <img
                   src="assets/Agentic AI in 2 minutes.png"
                   alt="Agentic AI in 2 minutes"
@@ -235,7 +170,7 @@
         </div>
 
         <!-- Second Set (Original Layout) -->
-        <div class="projects-flex" style="margin-top: 24px">
+        <div class="projects-flex">
           <!-- Large card on the left -->
           <a
             href="https://engineering.wealthsimple.com/how-wealthsimple-ships-new-features"
@@ -271,7 +206,7 @@
               href="https://anishalatchman.github.io/devs-guide/"
               target="_blank"
             >
-              <div class="project-card small overlay-blue">
+              <div class="project-card medium overlay-blue">
                 <img
                   src="assets/Text Wrap Balance Blog.png"
                   alt="Guide to Text Wrap Balance"
@@ -283,17 +218,32 @@
               </div>
             </a>
             <a
-              href="https://www.youtube.com/watch?v=VXwD-ZAYirM"
+              href="https://www.linkedin.com/pulse/everything-went-right-wrong-my-first-tedx-talk-anisha-latchman-y1bpc/"
               target="_blank"
             >
-              <div class="project-card small overlay-blue">
+              <div class="project-card medium overlay-purple">
                 <img
-                  src="assets/My FreshBooks Internship.jfif"
-                  alt="My FreshBooks Internship"
+                  src="assets/AnishaLatchmanTEDxTalk.jpg"
+                  alt="Anisha Latchman's first TEDx talk"
                 />
                 <div class="card-content">
-                  <h3>My FreshBooks Internship</h3>
-                  <p>Recap Video</p>
+                  <h3>My first TEDx talk</h3>
+                  <p>LinkedIn Blog</p>
+                </div>
+              </div>
+            </a>
+            <a
+              href="https://www.youtube.com/shorts/R4nePSWwB_U"
+              target="_blank"
+            >
+              <div class="project-card medium overlay-blue">
+                <img
+                  src="assets/AI_Debrief.png"
+                  alt="Build with AI Google Cloud Tech video"
+                />
+                <div class="card-content">
+                  <h3>Build with AI</h3>
+                  <p>Google Cloud Tech video</p>
                 </div>
               </div>
             </a>
@@ -305,30 +255,14 @@
     <!-- Connect Section -->
     <section class="section about-section" id="connect">
       <div class="container">
-        <h2 class="section-title">
-          Let's <span class="highlight-purple">Connect</span>
-        </h2>
         <div class="about-content">
           <div class="about-text">
             <p>
-              I'm passionate about building software that brings people together
-              and creating engaging content that
+              I build software and create engaging content that
               <strong>
-                helps others understand and connect with technology.
+                helps people connect with technology.
               </strong>
-            </p>
-            <p>
-              I have a Bachelor of Science in Computer Science and Cognitive
-              Science from the University of Toronto. I love sharing what I've
-              learned to
-              <strong>
-                help others understand how technology works and how people
-                interact with it.
-              </strong>
-            </p>
-            <p>
-              I'd love to chat about opportunities, collaboration, or just
-              connect!
+              Let's chat!
             </p>
             <div
               class="about-social"
@@ -393,86 +327,117 @@
         "
       >
         <span style="font-weight: 700">Anisha Latchman</span>
-        <span
-          >Made with <span class="heart" style="color: #c27ba0">&lt;3</span> in
-          Toronto</span
-        >
-        <div class="footer-switch">
-          <button class="theme-toggle-footer" aria-label="Toggle theme">
-            <img
-              src="assets/Moon Icon.svg"
-              alt="Toggle dark mode"
-              class="icon-moon-footer"
-              style="
-                height: 20px;
-                width: 20px;
-                vertical-align: middle;
-                display: none;
-              "
-            />
-            <img
-              src="assets/Sun Icon.svg"
-              alt="Toggle light mode"
-              class="icon-sun-footer"
-              style="
-                height: 20px;
-                width: 20px;
-                vertical-align: middle;
-                display: none;
-              "
-            />
-          </button>
-        </div>
       </div>
     </footer>
 
     <script>
-      // Theme toggle logic for header
-      const themeToggle = document.querySelector(".theme-toggle");
-      const moonIcon = themeToggle?.querySelector(".icon-moon");
-      const sunIcon = themeToggle?.querySelector(".icon-sun");
-      // Theme toggle logic for footer
-      const themeToggleFooter = document.querySelector(".theme-toggle-footer");
-      const moonIconFooter =
-        themeToggleFooter?.querySelector(".icon-moon-footer");
-      const sunIconFooter =
-        themeToggleFooter?.querySelector(".icon-sun-footer");
+      const drawingCanvas = document.querySelector(".drawing-canvas");
+      const drawingContext = drawingCanvas.getContext("2d");
+      const drawingToggle = document.querySelector(".theme-toggle");
+      const colorSwatches = document.querySelectorAll(".color-swatch");
+      let isDrawing = false;
+      let drawingMode = false;
+      let pixelRatio = window.devicePixelRatio || 1;
 
-      function updateThemeIcons() {
-        const isDark = document.body.classList.contains("dark-mode");
-        // Show moon in light mode, sun in dark mode
-        if (moonIcon) moonIcon.style.display = isDark ? "none" : "inline";
-        if (sunIcon) sunIcon.style.display = isDark ? "inline" : "none";
-        if (moonIconFooter)
-          moonIconFooter.style.display = isDark ? "none" : "inline";
-        if (sunIconFooter)
-          sunIconFooter.style.display = isDark ? "inline" : "none";
-      }
-
-      updateThemeIcons();
-
-      if (themeToggle) {
-        themeToggle.addEventListener("click", function () {
-          document.body.classList.toggle("dark-mode");
-          updateThemeIcons();
-        });
-      }
-      if (themeToggleFooter) {
-        themeToggleFooter.addEventListener("click", function () {
-          document.body.classList.toggle("dark-mode");
-          updateThemeIcons();
-        });
-      }
-      document.addEventListener("DOMContentLoaded", updateThemeIcons);
-      // Header scroll effect
-      const header = document.querySelector(".header");
-      window.addEventListener("scroll", function () {
-        if (window.scrollY > 10) {
-          header.classList.add("scrolled");
-        } else {
-          header.classList.remove("scrolled");
+      function resizeDrawingCanvas() {
+        const oldWidth = drawingCanvas.width / pixelRatio;
+        const oldHeight = drawingCanvas.height / pixelRatio;
+        const previousCanvas = document.createElement("canvas");
+        previousCanvas.width = drawingCanvas.width;
+        previousCanvas.height = drawingCanvas.height;
+        if (previousCanvas.width && previousCanvas.height) {
+          previousCanvas
+            .getContext("2d")
+            .drawImage(drawingCanvas, 0, 0);
         }
+
+        pixelRatio = window.devicePixelRatio || 1;
+        const pageWidth = Math.max(
+          document.documentElement.scrollWidth,
+          window.innerWidth,
+        );
+        const pageHeight = Math.max(
+          document.documentElement.scrollHeight,
+          window.innerHeight,
+        );
+        drawingCanvas.width = pageWidth * pixelRatio;
+        drawingCanvas.height = pageHeight * pixelRatio;
+        drawingCanvas.style.width = `${pageWidth}px`;
+        drawingCanvas.style.height = `${pageHeight}px`;
+        drawingContext.setTransform(1, 0, 0, 1, 0, 0);
+        drawingContext.scale(pixelRatio, pixelRatio);
+        if (oldWidth && oldHeight) {
+          drawingContext.drawImage(previousCanvas, 0, 0, oldWidth, oldHeight);
+        }
+        drawingContext.lineCap = "round";
+        drawingContext.lineJoin = "round";
+        drawingContext.lineWidth = 5;
+        drawingContext.strokeStyle = getComputedStyle(document.documentElement)
+          .getPropertyValue("--pen-purple")
+          .trim();
+      }
+
+      function setDrawingMode(isActive) {
+        drawingMode = isActive;
+        drawingCanvas.classList.toggle("is-active", isActive);
+        document.body.classList.toggle("drawing-mode", isActive);
+        drawingToggle.setAttribute(
+          "aria-label",
+          isActive ? "Exit drawing mode" : "Enter drawing mode",
+        );
+      }
+
+      function getPointerPosition(event) {
+        return { x: event.clientX + window.scrollX, y: event.clientY + window.scrollY };
+      }
+
+      drawingCanvas.addEventListener("pointerdown", (event) => {
+        if (!drawingMode) return;
+        isDrawing = true;
+        drawingCanvas.setPointerCapture(event.pointerId);
+        const { x, y } = getPointerPosition(event);
+        drawingContext.beginPath();
+        drawingContext.moveTo(x, y);
       });
+
+      drawingCanvas.addEventListener("pointermove", (event) => {
+        if (!isDrawing) return;
+        const { x, y } = getPointerPosition(event);
+        drawingContext.lineTo(x, y);
+        drawingContext.stroke();
+      });
+
+      drawingCanvas.addEventListener("pointerup", () => {
+        isDrawing = false;
+        drawingContext.closePath();
+      });
+
+      drawingToggle.addEventListener("click", () => {
+        if (drawingMode) {
+          drawingContext.clearRect(
+            0,
+            0,
+            drawingCanvas.width / pixelRatio,
+            drawingCanvas.height / pixelRatio,
+          );
+          setDrawingMode(false);
+          return;
+        }
+        setDrawingMode(true);
+      });
+
+      colorSwatches.forEach((swatch) => {
+        swatch.addEventListener("click", () => {
+          drawingContext.strokeStyle = getComputedStyle(document.documentElement)
+            .getPropertyValue(swatch.dataset.color)
+            .trim();
+          colorSwatches.forEach((item) => item.classList.remove("is-selected"));
+          swatch.classList.add("is-selected");
+        });
+      });
+
+      window.addEventListener("resize", resizeDrawingCanvas);
+      resizeDrawingCanvas();
     </script>
   </body>
 </html>
