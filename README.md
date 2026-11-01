@@ -1,4 +1,3 @@
-Who am I? What do i care about? Take a scroll and let me know.
+Personal portfolio site of projects I am proud of.
 
-Cheers,
 A
