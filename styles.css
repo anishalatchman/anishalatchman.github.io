@@ -91,11 +91,13 @@ body::before {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  left: 50%;
+  width: min(1200px, calc(100% - 48px));
   height: 100vh;
   z-index: 5;
   pointer-events: none;
   overflow: hidden;
+  transform: translateX(-50%);
 }
 
 .doodle {
@@ -647,8 +649,12 @@ body.drawing-mode .drawing-colors {
   }
 
   .nav-wrapper {
-    border-radius: 16px;
+    border-radius: 999px;
     padding: 10px 12px;
+  }
+
+  .theme-toggle {
+    display: none;
   }
 
   .hero-text h1 {
@@ -674,7 +680,8 @@ body.drawing-mode .drawing-colors {
   .hero-image img {
     height: 460px;
     margin-top: 0;
-    transform: translateX(-48%);
+    margin-right: 0;
+    transform: translateX(-10%);
   }
 
   .section {
