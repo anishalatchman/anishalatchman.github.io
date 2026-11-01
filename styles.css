@@ -49,6 +49,153 @@ body {
   pointer-events: auto;
 }
 
+.page-doodles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3200px;
+  z-index: 4;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.doodle {
+  position: absolute;
+  display: block;
+  width: 44px;
+  height: 44px;
+  color: var(--doodle-color);
+  opacity: 0.9;
+}
+
+.doodle-left {
+  left: 18px;
+}
+
+.doodle-right {
+  right: 18px;
+}
+
+.doodle-right:nth-child(1) {
+  top: 220px;
+  right: 110px;
+  transform: rotate(-18deg);
+}
+
+.doodle-left:nth-child(2) {
+  top: 1350px;
+  left: 28px;
+  transform: rotate(12deg) scale(0.82);
+}
+
+.doodle-right:nth-child(3) {
+  top: 760px;
+  right: 42px;
+  transform: rotate(-24deg) scale(1.08);
+}
+
+.doodle-left:nth-child(4) {
+  top: 1150px;
+  left: 92px;
+  transform: rotate(18deg) scale(0.9);
+}
+
+.doodle-right:nth-child(5) {
+  top: 1550px;
+  right: 26px;
+  transform: rotate(-12deg) scale(1.08);
+}
+
+.doodle-left:nth-child(6) {
+  top: 1950px;
+  left: 48px;
+  transform: rotate(20deg) scale(0.82);
+}
+
+.doodle-right:nth-child(7) {
+  top: 2400px;
+  right: 84px;
+  transform: rotate(-8deg) scale(0.92);
+}
+
+.doodle-left:nth-child(8) {
+  top: 2850px;
+  left: 110px;
+  transform: rotate(16deg) scale(1.05);
+}
+
+.doodle-purple {
+  --doodle-color: var(--pen-purple);
+}
+
+.doodle-orange {
+  --doodle-color: var(--pen-orange);
+}
+
+.doodle-yellow {
+  --doodle-color: var(--pen-yellow);
+}
+
+.doodle-blue {
+  --doodle-color: var(--pen-blue);
+}
+
+.doodle-ring {
+  border: 4px solid currentColor;
+  border-radius: 48% 58% 44% 55%;
+}
+
+.doodle-ring::after {
+  content: "";
+  position: absolute;
+  inset: 9px 5px 7px 11px;
+  border: 3px solid currentColor;
+  border-left-color: transparent;
+  border-radius: 50%;
+  transform: rotate(28deg);
+}
+
+.doodle-spark::before,
+.doodle-spark::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 20px;
+  width: 4px;
+  height: 40px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.doodle-spark::after {
+  transform: rotate(90deg);
+}
+
+.doodle-spark {
+  border: 4px solid currentColor;
+  border-radius: 50%;
+}
+
+.doodle-loop {
+  border: 4px solid currentColor;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-radius: 50%;
+}
+
+.doodle-loop::after {
+  content: "";
+  position: absolute;
+  right: -5px;
+  bottom: -5px;
+  width: 13px;
+  height: 13px;
+  border-right: 4px solid currentColor;
+  border-bottom: 4px solid currentColor;
+  transform: rotate(-18deg);
+}
+
 body.drawing-mode,
 body.drawing-mode .drawing-canvas {
   cursor: url("assets/empty-circle-cursor.svg") 8 8, crosshair;
@@ -288,6 +435,7 @@ body.drawing-mode .drawing-colors {
 .devrel-section .container {
   column-count: 3;
   column-gap: 24px;
+  direction: rtl;
 }
 
 .devrel-section .container > a {
@@ -295,6 +443,7 @@ body.drawing-mode .drawing-colors {
   break-inside: avoid;
   margin-bottom: 18px;
   text-decoration: none;
+  direction: ltr;
 }
 
 .featured-row {
@@ -303,6 +452,7 @@ body.drawing-mode .drawing-colors {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px 24px;
   margin-bottom: 18px;
+  direction: ltr;
 }
 
 .featured-tedx-card,
@@ -335,6 +485,10 @@ body.drawing-mode .drawing-colors {
 
 .project-card.medium {
   min-height: 300px;
+}
+
+.project-card.compact-card {
+  min-height: 220px;
 }
 
 .project-card:hover {
@@ -399,6 +553,10 @@ body.drawing-mode .drawing-colors {
   --card-accent-color: var(--pen-orange);
 }
 
+.project-card.uoft-grad-card {
+  --card-accent-color: var(--pen-orange);
+}
+
 /* About Section */
 .social-links {
   text-align: center;
@@ -448,8 +606,8 @@ body.drawing-mode .drawing-colors {
 }
 
 .about-image img {
-  width: 100%;
-  max-width: 400px;
+  width: 104%;
+  max-width: 500px;
   border-radius: 16px;
 }
 
@@ -474,6 +632,23 @@ body.drawing-mode .drawing-colors {
   transition: filter 0.2s;
 }
 
+.about-social img {
+  width: auto;
+  vertical-align: middle;
+}
+
+.about-social a:nth-of-type(1) img {
+  height: 32px !important;
+}
+
+.about-social a:nth-of-type(2) img {
+  height: 28px !important;
+}
+
+.about-social a:nth-of-type(3) img {
+  height: 24px !important;
+}
+
 /* Tablet Styles */
 @media (max-width: 1117px) {
   .hero-text {
@@ -488,6 +663,10 @@ body.drawing-mode .drawing-colors {
 
 /* Mobile Styles */
 @media (max-width: 768px) {
+  .page-doodles {
+    display: none;
+  }
+
   .hero {
     padding: 100px 10px 0 10px;
   }
@@ -538,6 +717,11 @@ body.drawing-mode .drawing-colors {
   .about-content {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+
+  .about-image img {
+    width: 100%;
+    max-width: 440px;
   }
 
   .hero {
