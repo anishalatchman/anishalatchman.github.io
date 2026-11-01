@@ -31,14 +31,18 @@
   <body>
     <canvas class="drawing-canvas" aria-hidden="true"></canvas>
     <div class="page-doodles" aria-hidden="true">
-      <span class="doodle doodle-ring doodle-right doodle-purple"></span>
-      <span class="doodle doodle-spark doodle-left doodle-orange"></span>
-      <span class="doodle doodle-loop doodle-right doodle-blue"></span>
-      <span class="doodle doodle-loop doodle-left doodle-yellow"></span>
-      <span class="doodle doodle-ring doodle-right doodle-orange"></span>
-      <span class="doodle doodle-spark doodle-left doodle-purple"></span>
-      <span class="doodle doodle-ring doodle-right doodle-yellow"></span>
-      <span class="doodle doodle-loop doodle-left doodle-blue"></span>
+      <img class="doodle doodle-right" src="assets/purple-star.png" alt="" />
+      <img class="doodle doodle-left" src="assets/yellow-smiley.png" alt="" />
+      <img class="doodle doodle-rainbow doodle-right" src="assets/blue-rainbow.png" alt="" />
+      <img class="doodle doodle-left" src="assets/orange-flower.png" alt="" />
+      <img class="doodle doodle-right" src="assets/yellow-swirl.png" alt="" />
+      <img class="doodle doodle-left" src="assets/purple-camera.png" alt="" />
+      <img class="doodle doodle-sun doodle-right" src="assets/orange-sun.png" alt="" />
+      <img class="doodle doodle-rainbow doodle-left" src="assets/blue-rainbow.png" alt="" />
+      <img class="doodle doodle-right" src="assets/yellow-smiley.png" alt="" />
+      <img class="doodle doodle-left" src="assets/purple-star.png" alt="" />
+      <img class="doodle doodle-right" src="assets/orange-flower.png" alt="" />
+      <img class="doodle doodle-rainbow doodle-left" src="assets/blue-rainbow.png" alt="" />
     </div>
     <!-- Header -->
     <header class="header">
@@ -359,12 +363,18 @@
 
     <script>
       const drawingCanvas = document.querySelector(".drawing-canvas");
+      const doodleLayer = document.querySelector(".page-doodles");
+      const footer = document.querySelector(".footer");
       const drawingContext = drawingCanvas.getContext("2d");
       const drawingToggle = document.querySelector(".theme-toggle");
       const colorSwatches = document.querySelectorAll(".color-swatch");
       let isDrawing = false;
       let drawingMode = false;
       let pixelRatio = window.devicePixelRatio || 1;
+
+      function sizeDoodleLayer() {
+        doodleLayer.style.height = `${footer.offsetTop}px`;
+      }
 
       function resizeDrawingCanvas() {
         const oldWidth = drawingCanvas.width / pixelRatio;
@@ -464,6 +474,8 @@
       });
 
       window.addEventListener("resize", resizeDrawingCanvas);
+      window.addEventListener("resize", sizeDoodleLayer);
+      sizeDoodleLayer();
       resizeDrawingCanvas();
     </script>
   </body>

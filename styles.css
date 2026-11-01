@@ -54,8 +54,8 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 3200px;
-  z-index: 4;
+  height: 100vh;
+  z-index: 5;
   pointer-events: none;
   overflow: hidden;
 }
@@ -63,10 +63,17 @@ body {
 .doodle {
   position: absolute;
   display: block;
-  width: 44px;
-  height: 44px;
-  color: var(--doodle-color);
-  opacity: 0.9;
+  width: 108px;
+  height: auto;
+  opacity: 0.92;
+}
+
+.doodle-rainbow {
+  width: 150px;
+}
+
+.doodle-sun {
+  width: 150px;
 }
 
 .doodle-left {
@@ -80,120 +87,61 @@ body {
 .doodle-right:nth-child(1) {
   top: 220px;
   right: 110px;
-  transform: rotate(-18deg);
 }
 
 .doodle-left:nth-child(2) {
-  top: 1350px;
+  top: 650px;
   left: 28px;
-  transform: rotate(12deg) scale(0.82);
 }
 
 .doodle-right:nth-child(3) {
-  top: 760px;
+  top: 950px;
   right: 42px;
-  transform: rotate(-24deg) scale(1.08);
 }
 
 .doodle-left:nth-child(4) {
-  top: 1150px;
+  top: 1250px;
   left: 92px;
-  transform: rotate(18deg) scale(0.9);
 }
 
 .doodle-right:nth-child(5) {
-  top: 1550px;
+  top: 1500px;
   right: 26px;
-  transform: rotate(-12deg) scale(1.08);
 }
 
 .doodle-left:nth-child(6) {
-  top: 1950px;
+  top: 1800px;
   left: 48px;
-  transform: rotate(20deg) scale(0.82);
 }
 
 .doodle-right:nth-child(7) {
-  top: 2400px;
+  top: 2100px;
   right: 84px;
-  transform: rotate(-8deg) scale(0.92);
 }
 
 .doodle-left:nth-child(8) {
-  top: 2850px;
+  top: 2400px;
   left: 110px;
-  transform: rotate(16deg) scale(1.05);
 }
 
-.doodle-purple {
-  --doodle-color: var(--pen-purple);
+.doodle-right:nth-child(9) {
+  top: 2700px;
+  right: 50px;
 }
 
-.doodle-orange {
-  --doodle-color: var(--pen-orange);
+.doodle-left:nth-child(10) {
+  top: 3000px;
+  left: 60px;
 }
 
-.doodle-yellow {
-  --doodle-color: var(--pen-yellow);
+.doodle-right:nth-child(11) {
+  top: 3300px;
+  right: 120px;
 }
 
-.doodle-blue {
-  --doodle-color: var(--pen-blue);
-}
-
-.doodle-ring {
-  border: 4px solid currentColor;
-  border-radius: 48% 58% 44% 55%;
-}
-
-.doodle-ring::after {
-  content: "";
-  position: absolute;
-  inset: 9px 5px 7px 11px;
-  border: 3px solid currentColor;
-  border-left-color: transparent;
-  border-radius: 50%;
-  transform: rotate(28deg);
-}
-
-.doodle-spark::before,
-.doodle-spark::after {
-  content: "";
-  position: absolute;
-  top: 3px;
+.doodle-left:nth-child(12) {
+  top: 3500px;
   left: 20px;
-  width: 4px;
-  height: 40px;
-  border-radius: 999px;
-  background: currentColor;
-}
-
-.doodle-spark::after {
-  transform: rotate(90deg);
-}
-
-.doodle-spark {
-  border: 4px solid currentColor;
-  border-radius: 50%;
-}
-
-.doodle-loop {
-  border: 4px solid currentColor;
-  border-top-color: transparent;
-  border-right-color: transparent;
-  border-radius: 50%;
-}
-
-.doodle-loop::after {
-  content: "";
-  position: absolute;
-  right: -5px;
-  bottom: -5px;
-  width: 13px;
-  height: 13px;
-  border-right: 4px solid currentColor;
-  border-bottom: 4px solid currentColor;
-  transform: rotate(-18deg);
 }
 
 body.drawing-mode,
@@ -360,13 +308,6 @@ body.drawing-mode .drawing-colors {
   margin-bottom: 16px;
 }
 
-.gradient-text {
-  background: var(--gradient-purple);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
 .hero-subtitle {
   font-size: 18px;
   color: var(--text-secondary);
@@ -406,25 +347,6 @@ body.drawing-mode .drawing-colors {
 .section {
   padding: 56px 0 0 0;
   background-color: var(--secondary-bg);
-}
-
-.section-title {
-  font-size: 42px;
-  font-weight: 700;
-  text-align: left;
-  margin-bottom: 18px;
-}
-
-.highlight-blue {
-  color: var(--gradient-blue);
-}
-
-.highlight-yellow {
-  color: var(--gradient-yellow);
-}
-
-.highlight-purple {
-  color: var(--gradient-purple);
 }
 
 .hero-developer-text {
@@ -558,25 +480,6 @@ body.drawing-mode .drawing-colors {
 }
 
 /* About Section */
-.social-links {
-  text-align: center;
-}
-
-.social-links p {
-  font-size: 14px;
-  color: var(--text-secondary);
-}
-
-.social-links a {
-  color: var(--gradient-blue);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.social-links a:hover {
-  text-decoration: underline;
-}
-
 .about-section {
   background-color: var(--secondary-bg);
   padding-bottom: 44px;
@@ -621,14 +524,7 @@ body.drawing-mode .drawing-colors {
   z-index: 100;
 }
 
-.footer p {
-  font-size: 14px;
-  color: var(--text-secondary);
-  text-align: left;
-}
-
-.about-social img,
-.footer-switch img {
+.about-social img {
   transition: filter 0.2s;
 }
 
@@ -694,26 +590,6 @@ body.drawing-mode .drawing-colors {
     margin-right: 4px;
   }
 
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .project-card.large {
-    grid-row: span 1;
-  }
-
-  .devrel-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .devrel-card.large {
-    grid-column: span 1;
-  }
-
-  .posts-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .about-content {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -761,18 +637,6 @@ body.drawing-mode .drawing-colors {
     height: 460px;
     margin-top: 0;
     transform: translateX(-48%);
-  }
-
-  .section-title {
-    font-size: 32px;
-  }
-
-  .devrel-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .posts-grid {
-    grid-template-columns: 1fr;
   }
 
   .section {
