@@ -33,8 +33,46 @@ body {
     Cantarell,
     sans-serif;
   background-color: var(--primary-bg);
+  background-image:
+    linear-gradient(
+      to right,
+      transparent 0,
+      transparent 72px,
+      rgba(184, 82, 82, 0.24) 72px,
+      rgba(184, 82, 82, 0.24) 73px,
+      transparent 73px
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 88px,
+      rgba(73, 123, 177, 0.25) 88px,
+      rgba(73, 123, 177, 0.25) 89px,
+      transparent 89px
+    ),
+    linear-gradient(transparent, transparent);
+  background-attachment: scroll;
+  position: relative;
   color: var(--text-primary);
   line-height: 1.6;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 89px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 31px,
+    rgba(120, 130, 140, 0.16) 31px,
+    rgba(120, 130, 140, 0.16) 32px
+  );
+  pointer-events: none;
+  z-index: 0;
 }
 
 .drawing-canvas {
@@ -288,7 +326,7 @@ body.drawing-mode .drawing-colors {
 /* Hero Section */
 .hero {
   padding: 0 60px 0 80px;
-  background-color: var(--primary-bg);
+  background-color: transparent;
   position: relative;
   overflow: hidden;
   transform: translateY(-10px);
@@ -346,7 +384,7 @@ body.drawing-mode .drawing-colors {
 /* Section Styles */
 .section {
   padding: 56px 0 0 0;
-  background-color: var(--secondary-bg);
+  background-color: transparent;
 }
 
 .hero-developer-text {
@@ -481,7 +519,7 @@ body.drawing-mode .drawing-colors {
 
 /* About Section */
 .about-section {
-  background-color: var(--secondary-bg);
+  background-color: transparent;
   padding-bottom: 44px;
 }
 
